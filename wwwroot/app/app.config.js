@@ -6,7 +6,10 @@
         .config(initrouter);
 
     function initrouter($stateProvider, $locationProvider, $urlRouterProvider) {
-        $locationProvider.html5Mode(true);
+        $locationProvider.html5Mode({
+            enabled: true,
+            requireBase: false
+        });
         $urlRouterProvider.otherwise('/');
         $stateProvider
             .state(
@@ -25,6 +28,5 @@
                 controllerAs: 'vm'
             }
             )
-
     }
 })();

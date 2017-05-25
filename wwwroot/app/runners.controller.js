@@ -1,14 +1,13 @@
-﻿
-(function () {
+﻿(function () {
     'use strict';
 
     angular
         .module('app')
-        .controller('RunnersController', ['$scope', RunnersController]);
+        .controller('RunnersController', RunnersController]);
 
     RunnersController.$inject = ['$http'];
 
-    function RunnersController($scope) {
+    function RunnersController($http) {
         var vm = this;
 
         vm.title = '';
