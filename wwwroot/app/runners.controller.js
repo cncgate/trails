@@ -3,7 +3,7 @@
 
     angular
         .module('app')
-        .controller('RunnersController', RunnersController]);
+        .controller('RunnersController', RunnersController);
 
     RunnersController.$inject = ['$http'];
 
