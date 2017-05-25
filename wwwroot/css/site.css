@@ -35,3 +35,9 @@ textarea {
         display: none;
     }
 }
+
+.jumbotron {
+    background-image:url("../images/gokart.jpg");
+    background-size: cover;
+    color: #fff;
+}

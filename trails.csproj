@@ -14,6 +14,7 @@
     <Content Include="wwwroot\app\home.html" />
     <Content Include="wwwroot\app\runners.controller.js" />
     <Content Include="wwwroot\app\runners.html" />
+    <Content Include="wwwroot\images\gokart.jpg" />
   </ItemGroup>
   
   <ItemGroup>
