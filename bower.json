@@ -7,7 +7,6 @@
     "jquery-validation": "1.15.0",
     "jquery-validation-unobtrusive": "3.2.6",
     "angular": "^1.6.4",
-    "angular-ui-router": "^1.0.3",
-    "gulp": "v3.9.1"
+    "angular-ui-router": "^1.0.3"
   }
 }
