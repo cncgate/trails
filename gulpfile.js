@@ -1,12 +1,11 @@
-﻿var gulp = require('gulp');
-var sass = require('gulp-sass');
-var sourcemaps = require('gulp-sourcemaps');
-var convertEncoding = require('gulp-convert-encoding');
-var rimraf = require('rimraf');
-var concat = require("gulp-concat");
-var cssmin = require("gulp-cssmin");
-var uglify = require("gulp-uglify");
-var project = require("./project.json");
+﻿/// <binding Clean='clean' />
+"use strict";
+
+var gulp = require("gulp"),
+    rimraf = require("rimraf"),
+    concat = require("gulp-concat"),
+    cssmin = require("gulp-cssmin"),
+    uglify = require("gulp-uglify");
 
 var paths = {
     webroot: "./wwwroot/"
@@ -14,12 +13,10 @@ var paths = {
 
 paths.js = paths.webroot + "js/**/*.js";
 paths.minJs = paths.webroot + "js/**/*.min.js";
-
 paths.css = paths.webroot + "css/**/*.css";
 paths.minCss = paths.webroot + "css/**/*.min.css";
-
 paths.concatJsDest = paths.webroot + "js/site.min.js";
-paths.concatCssDest = paths.webroot + "css/site.min.js";
+paths.concatCssDest = paths.webroot + "css/site.min.css";
 
 
 gulp.task("clean:js", function (cb) {
