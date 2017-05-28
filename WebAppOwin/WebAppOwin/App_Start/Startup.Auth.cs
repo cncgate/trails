@@ -6,6 +6,8 @@ using Microsoft.Owin.Security.Cookies;
 using Microsoft.Owin.Security.Google;
 using Owin;
 using WebAppOwin.Models;
+using WebAppOwin.Middleware;
+using System.Diagnostics;
 
 namespace WebAppOwin
 {
@@ -63,6 +65,21 @@ namespace WebAppOwin
             //    ClientId = "",
             //    ClientSecret = ""
             //});
+
+            app.UseDebugMiddleware(new DebugMiddlewareOptions {
+                OnIncomingRequest = (ctx) => {
+                    var watch = new Stopwatch();
+                    watch.Start();
+                    ctx.Environment["DebugStopwatch"] = watch;
+                    Trace.WriteLine("Debug OnIncomingRequest");
+                },
+                OnOutgoingRequest = (ctx) => {
+                    var watch = (Stopwatch)ctx.Environment["DebugStopwatch"];
+                    watch.Stop();
+                    Trace.WriteLine("Debug OnOutgoingRequest");
+                }
+            });
+            
         }
     }
 }
